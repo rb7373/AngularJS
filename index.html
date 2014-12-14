@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<meta charset="utf-8">
+		<title>FiX</title>
+	</head>
+
+	<body ng-controller="modulesController">
+		<h1>Lista de secciones</h1>
+		<div>
+			<div ng-repeat="module in modules | orderBy: 'name'">
+				<div> {{module.name}} </div>
+			</div>
+		</div>
+
+		<br/>
+
+		<center><button ng-click="ShowForm()" ng-hide="formVisibility"> Agregar módulo</button></center>
+
+		<div ng-show="formVisibility">
+			<h2>Agregar módulo</h2>
+			Nombre: <input type = "text" ng-model = "newModule.name"></input>
+			<button ng-click = "Save()">Guardar</button>
+		</div>
+
+		<!--AngularJS-->
+		<script src = "angular.min.js" type = "text/javascript"></script>
+		<script src = "scriptInit.js" type = "text/javascript"></script>
+
+	</body>
+</html>
+
+
